@@ -1,0 +1,383 @@
+﻿<style>
+    body {
+        font-family: Arial,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif margin: 0;
+        padding: 0;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px; /* Reduced padding */
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    .logo {
+        display: flex;
+        flex-direction: column; /* Stack the logo image and text vertically */
+        align-items: center;
+        margin-right: 20px; /* Space between logo and navigation */
+    }
+
+        .logo img {
+            width: 180px; /* Reduced the size of the logo for a compact look */
+            height: 180px;
+        }
+
+    .logo-text p {
+        color: #FF4C4C;
+        font-size: 18px; /* Reduced the font size for better balance */
+        margin: 5px 0 0 0; /* Adjusted margin to reduce space between logo and text */
+        font-weight: bold;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        nav ul li {
+            margin: 0 20px; /* Space between menu items */
+        }
+
+            nav ul li a {
+                text-decoration: none;
+                color: #000;
+                font-size: 20px;
+                transition: color 0.3s ease;
+            }
+
+                nav ul li a:hover {
+                    color: #FF4C4C;
+                }
+
+    .auth-buttons {
+        display: flex;
+        align-items: center;
+    }
+
+        .auth-buttons a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+
+        .auth-buttons .register {
+            margin-right: 15px; /* Reduced margin for better alignment */
+            text-decoration: none;
+            color: #3498db;
+            font-size: 16px;
+        }
+
+        .auth-buttons .login {
+            background-color: #FF4C4C;
+            color: #fff;
+            padding: 8px 16px; /* Reduced padding to make the button smaller */
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .auth-buttons .register:hover {
+            background-color: #eb3030;
+        }
+
+        .auth-buttons .login:hover {
+            color: #3498db;
+        }
+
+    .banner {
+        position: relative;
+        background: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .banner-content {
+        text-align: left;
+        max-width: 600px;
+    }
+
+        .banner-content h1 {
+            font-size: 48px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .banner-content p {
+            font-size: 18px;
+            margin: 10px 0 20px 0;
+        }
+
+    .banner-buttons {
+        display: flex;
+    }
+
+        .banner-buttons a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #27ae60;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+            .banner-buttons a:hover {
+                background-color: #1e8e50; /* Darker green on hover */
+            }
+
+    .white-border {
+        padding: 6px;
+        width: 160px; /* Reduced the width for better alignment */
+        margin: auto;
+        background: white;
+        border-radius: 15px;
+    }
+
+    .search-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #5ecb78;
+        padding: 20px;
+    }
+
+        .search-section form {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+    .search-field {
+        margin: 0 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .search-field label {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .search-field input,
+        .search-field select {
+            padding: 8px;
+            width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+    .search-button {
+        margin-left: 10px;
+    }
+
+        .search-button button {
+            padding: 12px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .search-button button:hover {
+                background-color: #2980b9;
+            }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .category {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+
+        .category:hover {
+            transform: scale(1.05);
+        }
+
+        .category img {
+            width: 50px;
+            margin-bottom: 15px;
+        }
+
+        .category h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .category p {
+            font-size: 16px;
+            color: #27ae60;
+        }
+
+    .(max-width: 768px) {
+        .grid
+
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    }
+
+    .(max-width: 480px) {
+        .grid
+
+    {
+        grid-template-columns: 1fr;
+    }
+    }
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="~/Content/vieclam24h.jpg" />
+            <div class="logo-text">
+                <p>KIẾM VIỆC LÀM ONLINE</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i>TRANG CHỦ</a></li>
+                <li><a href="#"><i class="fas fa-chevron-circle-down"></i>GIỚI THIỆU</a></li>
+                <li><a href="#"><i class="fas fa-briefcase"></i>CÔNG VIỆC</a></li>
+                <li><a href="#"><i class="fas fa-file-signature"></i>LIÊN HỆ</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="#" class="register">ĐĂNG KÝ</a>
+            <a href="#" class="login">ĐĂNG NHẬP</a>
+        </div>
+    </header>
+
+    <div class="banner">
+        <div class="banner-content">
+            <h1>Find The Best Startup Job That Fits You</h1>
+            <p>Kết nối đúng người, đúng thời, đúng hướng.</p>
+            <div class="banner-buttons">
+                <a href="#">Ứng tuyển thành viên</a>
+                <a href="#" style="background-color: #3498db;">Tìm kiếm tài năng</a> <!-- Blue color button -->
+            </div>
+        </div>
+    </div>
+
+    <div class="search-section">
+        <form>
+            <div class="search-field">
+                <label for="keyword">Keyword</label>
+                <input type="text" id="keyword" placeholder="Enter a keyword">
+            </div>
+
+            <div class="search-field">
+                <label for="category">Category</label>
+                <select id="category">
+                    <option value="">Select Category</option>
+                    <option value="IT">IT</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Finance">Finance</option>
+                </select>
+            </div>
+
+            <div class="search-field">
+                <label for="location">Location</label>
+                <input type="text" id="location" placeholder="Enter location">
+            </div>
+
+            <div class="search-button">
+                <button type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <h1>Explore By Category</h1>
+        <div class="grid">
+            <div class="category">
+                <i class="fas fa-mail-bulk"></i>
+                <h3>Marketing</h3>
+                <p>123 Vacancy</p>
+            </div>
+            <div class="category">
+                <i class="fas fa-headset"></i>
+                <h3>Customer Service</h3>
+                <p>123 Vacancy</p>
+            </div>
+            <div class="category">
+                <i class="fas fa-user-tie"></i>
+                <h3>Human Resource</h3>
+                <p>123 Vacancy</p>
+            </div>
+            <div class="category">
+                <i class="fas fa-tasks"></i>
+                <h3>Project Management</h3>
+                <p>123 Vacancy</p>
+            </div>
+            <div class="category">
+                <i class="fas fa-chart-line"></i>
+                <h3>Business Development</h3>
+                <p>123 Vacancy</p>
+            </div>
+            <div class="category">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Sales & Communication</h3>
+                <p>123 Vacancy</p>
+            </div>
+            <div class="category">
+                <i class="fas fa-book-reader"></i>
+                <h3>Teaching & Education</h3>
+                <p>123 Vacancy</p>
+            </div>
+            <div class="category">
+                <i class="fas fa-drafting-compass"></i>
+                <h3>Design & Creative</h3>
+                <p>123 Vacancy</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
